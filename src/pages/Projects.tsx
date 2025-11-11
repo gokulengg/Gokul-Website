@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import projects from "@/lib/projectsData";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import { ProjectCard } from "@/components/ui/project-card";
 import { useEffect } from "react";
 // Use public images for projects (placed in public/images/projects)
@@ -112,10 +113,10 @@ const Projects = () => {
 
               <div className="mt-6 md:mt-8 text-center">
                 <Button asChild size="default" className="shadow-md hover:shadow-lg transition-all duration-200 hover:scale-105">
-                  <a href="/contact" className="inline-flex items-center gap-2">
+                  <Link to="/contact" className="inline-flex items-center gap-2">
                     Discuss Partnership
                     <ArrowRight className="ml-2 h-4 w-4" />
-                  </a>
+                  </Link>
                 </Button>
               </div>
             </div>
