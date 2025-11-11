@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Cog, Wrench, Settings, Target, FileCheck, Handshake, CheckCircle2, ShieldCheck } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { Link } from "react-router-dom";
 import CardsStackDemo from "@/components/blocks/cards-stack-demo";
 import QuoteModalWithArrow from "@/components/QuoteModalWithArrow";
 
@@ -246,12 +247,12 @@ const Services = () => {
           <p className="text-lg md:text-xl text-primary-foreground/90 max-w-xl mx-auto mb-6">
             Let's discuss how Sri Gokul Engineering Works can bring precision, reliability, and excellence to your next project.
           </p>
-          <a
-            href="/contact"
+          <Link
+            to="/contact"
             className="inline-flex items-center justify-center rounded-md bg-primary-foreground text-primary px-8 py-3 text-sm font-medium shadow-large hover:bg-primary-foreground/90 transition-colors"
           >
             Contact Us Today
-          </a>
+          </Link>
         </div>
       </section>
     </div>
