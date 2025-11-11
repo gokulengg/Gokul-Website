@@ -1,6 +1,7 @@
 import { memo } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Link } from "react-router-dom";
 import { CheckCircle2, Zap, Wrench, Flame, Factory, BarChart3, Shield } from "lucide-react";
 import { GlowCard } from "@/components/ui/spotlight-card";
 
@@ -223,12 +224,12 @@ const Facilities = () => {
           <p className="text-lg md:text-xl text-primary-foreground/90 max-w-xl mx-auto mb-6">
             Let's discuss how Sri Gokul Engineering Works can bring precision, reliability, and excellence to your next project.
           </p>
-          <a
-            href="/contact"
+          <Link
+            to="/contact"
             className="inline-flex items-center justify-center rounded-md bg-primary-foreground text-primary px-8 py-3 text-sm font-medium shadow-large hover:bg-primary-foreground/90 transition-colors"
           >
             Contact Us Today
-          </a>
+          </Link>
         </div>
       </section>
     </div>
