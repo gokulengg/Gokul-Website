@@ -1,0 +1,47 @@
+# Sitemap location
+Sitemap: https://www.srigokul.com/sitemap.xml
+
+# General rules for all crawlers
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /*.json$
+Disallow: /api/
+Allow: /images/
+Allow: /videos/
+
+# Crawl delay (optional - adjust based on server capacity)
+Crawl-delay: 1
+
+# Request rate
+Request-rate: 30/1m
+
+# Google specific
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0.5
+
+# Bing specific
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Social media crawlers
+User-agent: Twitterbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+# Block bad bots
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /

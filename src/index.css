@@ -1,0 +1,681 @@
+/* Footer link style for consistency */
+.footer-link {
+  @apply text-foreground/80 hover:text-primary font-medium transition-colors duration-200;
+}
+
+/* Hero section background image */
+.hero-bg {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Marquee animation for industries section */
+.marquee {
+  animation: marquee 18s linear infinite;
+}
+
+/* Hide scrollbar but keep functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -250% 0;
+  }
+  100% {
+    background-position: 250% 0;
+  }
+}
+/* Animated View Project button (learn-more) - theme-aware, responsive */
+.learn-more {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  background: transparent;
+  padding: 0;
+  font-size: 1rem;
+  font-family: inherit;
+  width: 100%;
+  max-width: 220px;
+  margin: 0 auto;
+  border-radius: 1.625rem;
+  transition: box-shadow 0.3s;
+}
+
+.learn-more .circle {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: relative;
+  display: block;
+  margin: 0;
+  width: 3rem;
+  height: 3rem;
+  background: hsl(var(--brand)); /* always brand color, not foreground */
+  border-radius: 1.625rem;
+}
+
+.learn-more .circle .icon {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background: #fff;
+}
+
+.learn-more .circle .icon.arrow {
+  left: 0.625rem;
+  width: 1.125rem;
+  height: 0.125rem;
+  background: none;
+}
+
+.learn-more .circle .icon.arrow::before {
+  position: absolute;
+  content: "";
+  top: -0.29rem;
+  right: 0.0625rem;
+  width: 0.625rem;
+  height: 0.625rem;
+  border-top: 0.125rem solid #fff;
+  border-right: 0.125rem solid #fff;
+  transform: rotate(45deg);
+}
+
+.learn-more .button-text {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.75rem 0;
+  margin: 0 0 0 1.85rem;
+  color: hsl(var(--foreground));
+  font-weight: 700;
+  line-height: 1.6;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.learn-more:hover .circle {
+  width: 100%;
+  background: hsl(var(--primary));
+}
+
+.learn-more:hover .circle .icon.arrow {
+  background: #fff;
+  transform: translate(1rem, 0);
+}
+
+.learn-more:hover .button-text {
+  color: #fff;
+}
+
+@media (max-width: 640px) {
+  .learn-more {
+    max-width: 100%;
+    font-size: 0.95rem;
+  }
+  .learn-more .button-text {
+    padding: 0.6rem 0;
+    margin-left: 1.2rem;
+  }
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Warm palette based on logo: warm orange/red primary + cream background + dark warm text */
+    --background: 34 92% 98%; /* warm cream */
+    --foreground: 20 60% 16%; /* dark warm text */
+
+    --card: 34 95% 100%;
+    --card-foreground: 20 60% 16%;
+  --card-border: 20 18% 92%;
+
+    --popover: 34 95% 100%;
+    --popover-foreground: 20 60% 16%;
+
+    /* Primary: orange / reddish from logo */
+    --primary: 18 85% 48%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 18 80% 60%;
+    --primary-dark: 18 90% 32%;
+
+  /* Brand color used for buttons that should remain identical in both themes */
+  --brand: 18 85% 48%; /* same hue as primary (orange) but fixed across themes */
+  --brand-light: 18 80% 60%;
+
+    /* Secondary: warm golden accent */
+    --secondary: 42 92% 60%;
+    --secondary-foreground: 20 60% 16%;
+    --secondary-light: 42 92% 72%;
+    --secondary-dark: 42 90% 44%;
+
+    --muted: 35 20% 95%; /* light warm neutral */
+    --muted-foreground: 20 12% 40%;
+
+    --accent: 42 92% 60%;
+    --accent-foreground: 20 60% 16%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 35 15% 90%;
+    --input: 35 15% 90%;
+    --ring: 18 85% 48%;
+
+    --radius: 0.75rem;
+
+    /* Gradients tuned to the warm primary */
+  --gradient-primary: linear-gradient(135deg, hsl(18 85% 48%) 0%, hsl(18 90% 32%) 100%);
+  --gradient-accent: linear-gradient(135deg, hsl(42 92% 60%) 0%, hsl(42 90% 44%) 100%);
+  /* Neutral hero overlay: light mode uses a subtle white tint, no warm/orange tones */
+  --gradient-hero: linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0) 100%);
+
+    --shadow-soft: 0 2px 8px hsl(20 60% 16% / 0.06);
+    --shadow-medium: 0 4px 16px hsl(20 60% 16% / 0.10);
+    --shadow-large: 0 8px 32px hsl(20 60% 16% / 0.14);
+
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 220 12% 8%; /* dark neutral */
+    --foreground: 34 92% 98%; /* light cream text */
+
+    --card: 220 12% 10%;
+    --card-foreground: 34 92% 98%;
+    --card-border: 220 10% 20%;
+
+    --popover: 220 12% 10%;
+    --popover-foreground: 34 92% 98%;
+
+    /* Keep button colors same as light mode by NOT overriding --brand and --brand-light */
+
+    --primary: 18 70% 60%;
+    --primary-foreground: 34 92% 98%;
+    --primary-light: 18 65% 72%;
+    --primary-dark: 18 80% 44%;
+
+    --secondary: 42 92% 60%;
+    --secondary-foreground: 34 92% 98%;
+    --secondary-light: 42 90% 72%;
+    --secondary-dark: 42 90% 44%;
+
+    --muted: 220 10% 12%;
+    --muted-foreground: 34 92% 88%;
+
+    --accent: 42 92% 60%;
+    --accent-foreground: 34 92% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 34 92% 98%;
+
+    --border: 220 10% 14%;
+    --input: 220 10% 14%;
+    --ring: 18 70% 60%;
+
+  --gradient-primary: linear-gradient(135deg, hsl(18 70% 60%) 0%, hsl(18 80% 44%) 100%);
+  --gradient-accent: linear-gradient(135deg, hsl(42 90% 72%) 0%, hsl(42 90% 44%) 100%);
+  /* Neutral hero overlay for dark mode: subtle darkening for contrast */
+  --gradient-hero: linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.6) 100%);
+
+    --shadow-soft: 0 2px 8px hsl(0 0% 0% / 0.45);
+    --shadow-medium: 0 4px 16px hsl(0 0% 0% / 0.55);
+    --shadow-large: 0 8px 32px hsl(0 0% 0% / 0.6);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* Theme-aware scrollbar styling - synced with primary color */
+  /* Chrome, Safari, Edge scrollbar (webkit-based) */
+  *::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--primary));
+    border-radius: 4px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    transition: background-color 0.3s ease;
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: hsl(var(--primary-light));
+  }
+
+  /* Firefox scrollbar (modern) */
+  @supports (scrollbar-color: red transparent) {
+    * {
+      scrollbar-color: hsl(var(--primary)) transparent;
+      scrollbar-width: thin;
+    }
+  }
+}
+
+/* Responsive base font sizing to improve readability across devices.
+   - small screens: 15px
+   - medium screens (>=768px): 16px
+   - large screens (>=1280px): 18px
+*/
+html {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1280px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+/* Button UI: `.button-5` adapted to design tokens so it matches theme and works in dark/light.
+   This closely follows the provided style but uses CSS variables (primary & primary-light)
+   so the button color will follow the app theme.
+*/
+.button-5 {
+  position: relative;
+  appearance: button;
+  background-color: hsl(var(--brand)); /* fixed brand color */
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  box-sizing: border-box;
+  color: hsl(var(--primary-foreground));
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: inherit;
+  font-size: 0.9375rem; /* 15px */
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  line-height: 1.2;
+  margin: 0;
+  outline: none;
+  overflow: hidden;
+  padding: 0.625rem 0.875rem; /* slightly reduced padding to avoid overflow */
+  text-align: center;
+  text-transform: uppercase;
+  touch-action: manipulation;
+  transform: translateZ(0);
+  transition: filter .2s, transform .08s;
+  -webkit-user-select: none;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+.button-5:after {
+  background-clip: padding-box;
+  background-color: hsl(var(--brand-light));
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  bottom: -4px;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.button-5:focus,
+.button-5:main {
+  -webkit-user-select: auto;
+  user-select: auto;
+}
+
+.button-5:hover:not(:disabled) {
+  filter: brightness(1.06);
+}
+
+.button-5:disabled {
+  cursor: auto;
+  opacity: 0.5;
+}
+
+.button-5:active {
+  border-width: 4px 0 0;
+  background: none;
+}
+
+/* Responsive behavior: full-width buttons on small screens to prevent overflow */
+@media (max-width: 640px) {
+  .button-5 {
+    width: 100%;
+    white-space: normal; /* allow wrapping on narrow screens */
+    padding: 0.75rem 1rem;
+  }
+}
+
+/* Make sure Tailwind-sized button classes still work; align padding for sizes */
+.button-5.h-10, .button-5.h-9, .button-5.h-11 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Services card styles (theme-aware) */
+.services-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  border: 1px solid hsl(var(--card-border));
+  background: hsl(var(--card));
+  transition: transform .28s ease, box-shadow .28s ease;
+}
+
+.services-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-large);
+}
+
+.services-card-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 140%;
+  height: 140%;
+  /* start as a rounded blob scaled down at top-right */
+  border-radius: 50%;
+  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-dark)) 100%);
+  transform-origin: top right;
+  transform: translate(15%, -15%) scale(0.18);
+  transition: transform 1.1s cubic-bezier(.2,.8,.2,1), border-radius 1.1s cubic-bezier(.2,.8,.2,1), background-color 0.6s;
+  z-index: 0;
+}
+
+.services-card:hover .services-card-bg {
+  transform: translate(0, 0) scale(1);
+  border-radius: 0;
+}
+
+.services-card-number {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  background: hsl(var(--primary));
+}
+
+.services-card-number-text {
+  color: #ffffff; /* always white */
+  font-weight: 700;
+}
+
+.services-card-body {
+  position: relative;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+}
+
+.services-card-icon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  background: color-mix(in srgb, hsl(var(--primary)) 12%, transparent);
+}
+
+.services-card-icon-svg {
+  width: 24px;
+  height: 24px;
+  color: hsl(var(--primary));
+  /* Ensure Lucide (outline) icons use stroke=currentColor and transition smoothly */
+  stroke: currentColor;
+  fill: none;
+  transition: color 0.9s ease, stroke 0.9s ease, fill 0.9s ease;
+}
+
+/* Some Lucide icons render multiple paths; ensure their paths inherit stroke/fill */
+.services-card-icon-svg * {
+  stroke: currentColor;
+  fill: none;
+}
+
+.services-card-title {
+  font-size: 1.0625rem; /* 17px */
+  font-weight: 700;
+  color: hsl(var(--card-foreground));
+}
+
+.services-card-desc {
+  font-size: 0.9375rem;
+  color: hsl(var(--muted-foreground));
+}
+
+/* Smooth color/fill transition on hover */
+.services-card .services-card-title,
+.services-card .services-card-desc,
+.services-card .services-card-icon-svg {
+  transition: color 0.9s ease, fill 0.9s ease, stroke 0.9s ease;
+}
+
+/* On hover: make text and icon white */
+.services-card:hover .services-card-title,
+.services-card:hover .services-card-desc {
+  color: #ffffff !important;
+}
+
+/* On hover, change icon stroke to white but avoid forcing fill for outline icons */
+.services-card:hover .services-card-icon-svg,
+.services-card:hover .services-card-icon-svg * {
+  color: #ffffff !important;
+  stroke: #ffffff !important;
+}
+
+/* semi-circle accent using pseudo-element placed behind number but above bg */
+.services-card::before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-dark)) 100%);
+  transform-origin: center;
+  transform: translate(15%, -15%) scale(0.22);
+  transition: transform 1.1s cubic-bezier(.2,.8,.2,1), opacity 0.9s ease;
+  z-index: 5;
+  opacity: 0.95;
+  pointer-events: none;
+}
+
+.services-card:hover::before {
+  transform: translate(0, 0) scale(1);
+  border-radius: 0 0 0 0;
+}
+
+@media (max-width: 640px) {
+  .services-card {
+    padding: 1rem;
+  }
+  .services-card-bg {
+    display: none; /* hide large bg on very small screens to save space */
+  }
+}
+
+/* Project cards improvements (Home projects section) */
+.project-card {
+  border-radius: 1rem; /* larger radius */
+  border: 1px solid hsl(var(--card-border));
+  background: hsl(var(--card));
+  overflow: hidden;
+  transition: transform .32s cubic-bezier(.2,.9,.2,1), box-shadow .32s cubic-bezier(.2,.9,.2,1), border-color .32s;
+}
+
+.project-card .relative img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-card .relative::after {
+  /* subtle gradient overlay for better text contrast */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.28) 100%);
+  opacity: 0;
+  transition: opacity .6s ease;
+  pointer-events: none;
+}
+
+.project-card.group:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px hsl(0 0% 0% / 0.22);
+  border-color: hsl(var(--primary));
+}
+
+.project-card.group:hover .relative::after {
+  opacity: 1;
+}
+
+/* Ensure card content has better padding and radius */
+.project-card .p-6 {
+  padding: 1rem 1rem 1.25rem;
+}
+
+/* Dark-mode tweaks: stronger border for contrast */
+@media (prefers-color-scheme: dark) {
+  .project-card {
+    /* stronger light-tinted border for better contrast on dark backgrounds */
+    border-color: rgba(255,255,255,0.10);
+    background: hsl(var(--card));
+    /* subtle highlight line to separate the card from the background */
+    box-shadow: 0 1px 0 rgba(255,255,255,0.02);
+  }
+}
+
+/* Strengthen project card border under the explicit `.dark` class (used by the app)
+   to improve contrast on dark theme while keeping the light theme unchanged. */
+.dark .project-card,
+.dark .services-card,
+.dark .cards-stack-card,
+.dark .core-service-card,
+.dark .card {
+  /* increased contrast for dark mode borders so they are visible on dark backgrounds */
+  border-color: rgba(255,255,255,0.14); /* more visible than previous 0.06 */
+  /* subtle light top line plus a faint dark shadow to give depth */
+  box-shadow: 0 1px 0 rgba(255,255,255,0.03), 0 6px 18px rgba(0,0,0,0.45);
+}
+
+@media (max-width: 640px) {
+  .project-card {
+    border-radius: 0.75rem;
+  }
+}
+
+/* Utility for cards stack perspective to avoid inline styles (used by cards-stack component) */
+.cards-scroll-perspective {
+  perspective: 1000px;
+}
+
+  /* Cards stack specific card styling to ensure visible borders in both light and dark modes */
+  .cards-stack-card {
+    border-radius: 1rem;
+    border: 1px solid hsl(var(--card-border));
+    transition: box-shadow .28s ease, transform .28s ease, border-color .2s ease;
+  }
+
+  .cards-stack-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-large);
+  }
+
+  /* Core services card styling to improve visual hierarchy and borders */
+  .core-service-card {
+    border-radius: 1rem;
+    border: 1px solid hsl(var(--card-border));
+    background: hsl(var(--card));
+    transition: transform .28s ease, box-shadow .28s ease, border-color .2s ease;
+  }
+
+  .core-service-card .bg-muted\/50 {
+    border: 1px solid hsl(var(--card-border));
+  }
+
+  .core-service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-large);
+  }
+
+/* Process section connector lines */
+.line-0, .line-1, .line-2, .line-3 {
+  left: calc(10% + 1.5rem) !important;
+  width: calc(20% - 3rem) !important;
+}
+
+.line-1 {
+  left: calc(30% + 1.5rem) !important;
+}
+
+.line-2 {
+  left: calc(50% + 1.5rem) !important;
+}
+
+.line-3 {
+  left: calc(70% + 1.5rem) !important;
+}

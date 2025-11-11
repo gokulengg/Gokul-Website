@@ -1,0 +1,154 @@
+{
+  "serviceLDs": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Heavy & Aerospace-Grade Machining",
+      "description": "Transform the most challenging designs into flawless, intricate components. Our state-of-the-art machine shop handles specialized alloys with superior finishes and dimensional accuracy.",
+      "provider": {
+        "@type": "Organization",
+        "name": "Sri Gokul Engineering Works",
+        "url": "https://www.srigokulengineeringworks.com"
+      },
+      "areaServed": {
+        "@type": "Place",
+        "name": "India, USA, Europe"
+      },
+      "serviceType": "Precision Machining",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Machining Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "CNC & Conventional Turning"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Vertical & Horizontal Boring"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Precision Grinding"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Advanced Milling Operations"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Advanced Structural Fabrication",
+      "description": "Build robust, mission-critical structures and equipment from initial design to final assembly. Our certified welders work in adherence with the most stringent international codes.",
+      "provider": {
+        "@type": "Organization",
+        "name": "Sri Gokul Engineering Works",
+        "url": "https://www.srigokulengineeringworks.com"
+      },
+      "areaServed": {
+        "@type": "Place",
+        "name": "India, USA, Europe"
+      },
+      "serviceType": "Structural Fabrication",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Fabrication Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Heavy Equipment Frames"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Custom Skids & Assemblies"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Storage Tanks"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Complex Weldments"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Integrated Tool Room Solutions",
+      "description": "Precision manufacturing begins with perfect tooling. Our dedicated tool room develops high-performance Jigs, Fixtures, Press Tools, and Dies for unmatched repeatability.",
+      "provider": {
+        "@type": "Organization",
+        "name": "Sri Gokul Engineering Works",
+        "url": "https://www.srigokulengineeringworks.com"
+      },
+      "areaServed": {
+        "@type": "Place",
+        "name": "India, USA, Europe"
+      },
+      "serviceType": "Tool Room Solutions",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Tool Room Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Jigs & Fixtures Design"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Integration Jigs"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Strain Ageing Fixtures"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Custom Press Tools"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
